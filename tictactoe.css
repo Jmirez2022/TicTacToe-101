@@ -1,16 +1,22 @@
 .jumbotron {
   margin: 5% auto;
-  margin-left: 43%;
-}
-
-td {
-  height:150px;
-  width:150px;
   text-align: center;
-  border: 5px solid black;
-  font-size: 100px;
 }
-
+h1{
+  text-align: center;
+}
+p{
+text-align: center;
+}
+td {
+  height:50px;
+  width: 50px;
+  text-align: center;
+  border: 1px solid rgb(255, 0, 0);
+  font-size: 50px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
+}
 table {
-  margin: auto auto;
+  margin:auto auto;
 }
