@@ -26,7 +26,7 @@ const handleClick = (element) => {
   element.style.justifyContent = 'center'
   element.style.alignItems = 'center'
   element.style.fontSize = '32px'
-
+  
   // this uses the "log" method on the "console" to log out the element's id so we can see it with our human eyes
   console.log(`The element you clicked on has an id:  ${element.id}`)
 
@@ -45,6 +45,7 @@ const handleBoxClick = (element) => {
 // this function places the "currentMarker" inside the HTML element that was clicked and calls the "changeMarker" function.
 const addMarker = (id) => {
 console.log("id", id)
+
   // @TODO-1: Open the console tab in your Chrome Inspector Tool and click on the top-left square to see what's logged to the console. 
   console.log(`*** The current marker is:  ${currentMarker}. ***`)
   console.log(`Therefore, a  "${currentMarker}"  should be placed in the square with the id:  ${id}`)
@@ -100,28 +101,24 @@ let board = [
 ]
 
 function checkForWin() {
+
   if (horizontalWin() || verticalWin() || diagonalWin()) {
     window.alert(`Player ${currentMarker} won!`)
+    
   } else {
     changeMarker()
   }
-  console.log
+  (console.log)
 }
+
 
 const horizontalWin = () => {
   if ((board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X")
-  || (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X")
-  || (board[2][0] == "X" && board[2][1] == "X" && board[2][2] == "X")
   || (board[0][0] == "O" && board[0][1] == "O" && board[0][2] == "O")
+  || (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X")
   || (board[1][0] == "O" && board[1][1] == "O" && board[1][2] == "O")
-  || (board[2][0] == "O" && board[2][1] == "O" && board[2][2] == "O")
-  )
-
-{
-  console.log('Horizontal Win')
- }
-
-  // Your code here to check for horizontal wins
+  || (board[2][0] == "X" && board[2][1] == "X" && board[2][2] == "X")
+  || (board[2][0] == "O" && board[2][1] == "O" && board[2][2] == "O")) {return true}
 } 
 
 const verticalWin = () => {
@@ -130,25 +127,12 @@ const verticalWin = () => {
   || (board[0][2] == "X" && board[1][2] == "X" && board[2][2] == "X")
   || (board[0][0] == "O" && board[1][0] == "O" && board[2][0] == "O")
   || (board[0][1] == "O" && board[1][1] == "O" && board[2][1] == "O")
-  || (board[0][2] == "O" && board[1][2] == "O" && board[2][2] == "O") 
-)
-
-{
-  console.log('Vertical Win')
-}
-
-  // Your code here to check for vertical wins
+  || (board[0][2] == "O" && board[1][2] == "O" && board[2][2] == "O")) {return true}
 }
 
 const diagonalWin = () => {
-  if((board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X") 
-  || (board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X")
+  if((board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X")
   || (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O")
-  || (board[0][2] == "O" && board[1][1] == "O" && board[2][0] == "O")
-)
-{
-  console.log('Diagonal Win')
-}
-
-  // Your code here to check for diagonal wins
+  || (board[2][0] == "X" && board[1][1] == "X" && board[0][2] == "X")
+  || (board[2][0] == "O" && board[1][1] == "O" && board[0][2] == "O")) {return true}
 }
